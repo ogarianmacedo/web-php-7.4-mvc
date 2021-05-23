@@ -1,0 +1,59 @@
+<div class="section landing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <?php if ($this->params) { ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong><?= $this->params['msg']?></strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <h2 class="text-center">Escrever Mensagem</h2>
+
+                <form class="contact-form" action="/salvar-mensagem" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Nome</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="nc-icon nc-single-02"></i>
+                                            </span>
+                                </div>
+                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>E-mail</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="nc-icon nc-email-85"></i>
+                                            </span>
+                                </div>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
+                            </div>
+                        </div>
+                    </div>
+
+                    <label>Mensagem</label>
+                    <textarea class="form-control" rows="4" name="mensagem" id="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+
+                    <div class="row">
+                        <div class="col-md-4 ml-auto mr-auto">
+                            <button class="btn btn-danger btn-lg btn-fill" type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="section section-dark text-center">
+    <div class="container">
+        <h2 class="title">Sobre</h2>
+
+        <div class="row">
+            <?php foreach  ($this->params as $key => $info) { ?>
+                <div class="col-md-4">
+                    <div class="info">
+                        <div class="icon icon-danger">
+                            <i class="nc-icon <?= $info['icone']?>"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title"><?= $info['titulo']?></h4>
+                            <p class="text-justify"><?= $info['descricao']?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php }?>
+        </div>
+    </div>
+</div>

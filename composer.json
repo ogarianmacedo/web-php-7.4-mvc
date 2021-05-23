@@ -1,0 +1,23 @@
+{
+  "name": "vendor_name/web_php_mvc",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "require": {
+    "php": ">= 7.4",
+    "ext-pdo": "*",
+    "ext-mbstring": "*"
+  },
+  "authors": [
+    {
+      "name": "Ogarian Mendonca",
+      "email": "ogarianmetal@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "MF\\": "vendor/MF/"
+    }
+  }
+}
