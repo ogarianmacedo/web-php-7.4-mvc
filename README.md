@@ -1,6 +1,6 @@
 # web_php7.4_mvc
 
-Projeto Livre - Miniframework com PHP 7.4
+Projeto Livre - Mini Framework MVC com PHP 7.4
 
 #### Instruções:
     1- Executar: composer install
