@@ -17,7 +17,11 @@ class MensagemRepository extends Repository
      */
     private string $table = 'tb_mensagem';
 
-    public function save(Mensagem $mensagem)
+    /**
+     * @param Mensagem $mensagem
+     * @return string[]
+     */
+    public function save(Mensagem $mensagem): array
     {
         try {
             $sql = "INSERT INTO $this->table (nome, email, mensagem, data_envio)
@@ -30,8 +34,10 @@ class MensagemRepository extends Repository
             $sqlPrepare->bindValue(":data_envio",  date("d/m/Y"));
 
             $sqlPrepare->execute();
+
+            return ['success' => 'Mensagem enviada com sucesso!'];
         } catch (Exception $e) {
-            throw new Exception($e->getMessage(), $e->getCode());
+            return ['error' => 'Não foi possível enviar mensagem!'];
         }
     }
 }

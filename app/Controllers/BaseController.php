@@ -37,4 +37,12 @@ abstract class BaseController
 
         require_once "../App/Views/" . $class . "/" .  $this->view . ".phtml";
     }
+
+    /**
+     * @param array $params
+     */
+    protected function renderJson($params = []): void
+    {
+        echo json_encode($params);
+    }
 }

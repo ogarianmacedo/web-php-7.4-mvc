@@ -4,6 +4,10 @@ namespace App\Models;
 
 use DateTime;
 
+/**
+ * Class Mensagem
+ * @package App\Models
+ */
 class Mensagem
 {
     /**

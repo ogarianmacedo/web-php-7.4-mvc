@@ -159,21 +159,10 @@ class RouterCore
             throw new Exception('Dados inválidos', 404);
         }
 
-        // TODO: implementação para inicialização de injeções de dependências no controller. Não continuada
-        // $reflect = new ReflectionClass($cont);
-        // $arrayInjectionConstructor = $reflect->getConstructor()->getParameters();
-
-        // $textClasses = [];
-        // foreach ($arrayInjectionConstructor as $injection) {
-        //     $classInjected = $injection->getClass()->name;
-        //     $textClasses[] = $classInjected;
-        // }
-
         call_user_func_array([
             new $cont(),
             $ex[1]
         ], [new Request]);
-
     }
 
     /**

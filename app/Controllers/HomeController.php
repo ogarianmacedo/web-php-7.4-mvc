@@ -48,6 +48,9 @@ class HomeController extends BaseController
         $this->render('mensagem');
     }
 
+    /**
+     * @param Request $request
+     */
     public function salvarMensagem(Request $request)
     {
         $mensagem = new Mensagem();
@@ -55,8 +58,7 @@ class HomeController extends BaseController
         $mensagem->setEmail($request->params['email']);
         $mensagem->setMensagem($request->params['mensagem']);
 
-        $this->mensagemRepository->save($mensagem);
-
-        $this->render('mensagem', ['msg' => 'Mensagem enviada com sucesso!']);
+        $result = $this->mensagemRepository->save($mensagem);
+        $this->renderJson($result);
     }
 }
